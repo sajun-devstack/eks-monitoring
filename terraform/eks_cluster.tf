@@ -1,5 +1,5 @@
 # create a cluster
-resource "aws_eks_cluster" "devstack_monitoring" {
+resource "aws_eks_cluster" "main" {
   name = "devstack-monitoring"
   version = "1.27"
 
