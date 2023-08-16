@@ -1,6 +1,6 @@
 # create a cluster
 resource "aws_eks_cluster" "devstack_monitoring" {
-  name = "devstack_monitoring"
+  name = "devstack-monitoring"
   version = "1.27"
 
   role_arn = aws_iam_role.monitor.arn
@@ -15,7 +15,7 @@ resource "aws_eks_cluster" "devstack_monitoring" {
 
 
 resource "aws_eks_node_group" "eks_worker_nodes" {
-  cluster_name    = aws_eks_cluster.devstack_monitoring.name
+  cluster_name    = aws_eks_cluster.main.name
   node_group_name = "my-worker-nodes"
   node_role_arn   = aws_iam_role.worker.arn
   # Identifiers of EC2 Subnets to associate with the EKS Node Group.
