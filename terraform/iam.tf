@@ -42,3 +42,8 @@ resource "aws_iam_role_policy_attachment" "worker-AmazonEC2ContainerRegistryRead
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
   role       = aws_iam_role.worker.name
 }
+
+resource "aws_iam_role_policy_attachment" "worker-CloudWatchAgentServerPolicy" {
+  policy_arn = "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+  role       = aws_iam_role.worker.name
+}
