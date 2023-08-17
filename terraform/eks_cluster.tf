@@ -24,9 +24,9 @@ resource "aws_eks_node_group" "eks_worker_nodes" {
 
   # Auto Scaling Group of Kubernetes worker nodes
   scaling_config {
-    desired_size = 1   # Desired number of worker nodes
+    desired_size = 2   # Desired number of worker nodes
     max_size     = 2   # Maximum number of worker nodes
-    min_size     = 1   # Minimum number of worker nodes
+    min_size     = 2   # Minimum number of worker nodes
   }
 
   depends_on = [
